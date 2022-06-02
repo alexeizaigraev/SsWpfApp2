@@ -1,0 +1,135 @@
+﻿<Window x:Class="SsWpfApp2.WindowTerm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SsWpfApp2"
+        mc:Ignorable="d"
+        Title="WindowTerm"  Height="900" Width="980">
+    <Grid ForceCursor="True" Background="#FF0DD7E8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="71.4" />
+            <ColumnDefinition Width="78.6"/>
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <Menu Height="50" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="2">
+            <MenuItem Header="Очисти" FontSize="24">
+                <MenuItem Header="Очисти" Click="WinTermClear_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Find" FontSize="24">
+                <MenuItem Header="Терминал" Click="WinTermFind_Click"></MenuItem>
+                <MenuItem Header="Заводской номер" Click="ButtonOtborInputZn_Click"></MenuItem>
+                <MenuItem Header="Фискальный номер" Click="ButtonOtborInputFiscal_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Label x:Name="labelDepartment" Content="department" Grid.Column="1" Grid.Row="4" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelTermial" Content="termial" Grid.Column="1" Grid.Row="5" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelDistrictModel" Content="model" Grid.Column="1" Grid.Row="14" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelSerial_number" Content="serialNumber" Grid.Column="1" Grid.Row="7" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelDate_manufacture" Content="dateManufacture" Grid.Column="1" Grid.Row="13" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelSoft" Content="soft" Grid.Column="1" Grid.Row="11" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelProducer" Content="Producer" Grid.Column="1" Grid.Row="12" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelRneRro" Content="RneRro" Grid.Column="1" Grid.Row="10" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelSealing" Content="Sealing" Grid.Column="1" Grid.Row="9" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelFiscalNumber" Content="FiscalNumber" Grid.Column="1" Grid.Row="8" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+
+        <Label x:Name="labelOroSerial" Content="OroSerial" Grid.Column="3" Grid.Row="4" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelOroNumber" Content="OroNumber" Grid.Column="3" Grid.Row="5" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelTicketSerial" Content="TicketSerial" Grid.Column="3" Grid.Row="6" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelTicket1Sheet" Content="Ticket1Sheet" Grid.Column="3" Grid.Row="7" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelTicketNumber" Content="TicketNumber" Grid.Column="3" Grid.Row="8" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelSending" Content="Sending" Grid.Column="3" Grid.Row="10" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelToRro" Content="ToRro" Grid.Column="3" Grid.Row="9" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelOwnerRro" Content="OwnerRro" Grid.Column="3" Grid.Row="12" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelRegister" Content="Register" Grid.Column="1" Grid.Row="6" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelFinish" Content="Finish" Grid.Column="3" Grid.Row="11" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <Label x:Name="labelAddress" Content="Address" Grid.Column="1" Grid.Row="17" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+
+        <TextBox x:Name="textBoxDepartment" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="4" FontSize="24"/>
+        <TextBox x:Name="textBoxTermial" Text="" Background="#FFDAF7DC" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="5" FontSize="24" />
+        <TextBox x:Name="textBoxModel" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="14" FontSize="24" />
+        <TextBox x:Name="textBoxSerialNumber" Background="#FFDAF0F7" Foreground="#FF073CBD" Text="" Grid.Column="2" Grid.Row="7" FontSize="24"/>
+        <TextBox x:Name="textBoxDateManufacture" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="13" FontSize="24" />
+        <TextBox x:Name="textBoxSoft" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="11" FontSize="24" />
+        <TextBox x:Name="textBoxProducer" Text="" Grid.Column="2" Grid.Row="12" FontSize="24" Foreground="#FF073CBD" Background="#FFEDEDD0" />
+        <TextBox x:Name="textBoxRneRro" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="10" FontSize="24" />
+        <TextBox x:Name="textBoxSealing" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="9" FontSize="24" />
+        <TextBox x:Name="textBoxFiscalNumber" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="8" FontSize="24" />
+
+        <TextBox x:Name="textBoxOroSerial" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="4" Grid.Row="4" FontSize="24" />
+        <TextBox x:Name="textBoxOroNumber" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="4" Grid.Row="5" FontSize="24" />
+        <TextBox x:Name="textBoxTicketSerial" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="4" Grid.Row="6" FontSize="24" />
+        <TextBox x:Name="textBoxTicket1Sheet" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="4" Grid.Row="7" FontSize="24" />
+        <TextBox x:Name="textBoxTicketNumber" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="4" Grid.Row="8" FontSize="24" />
+        <TextBox x:Name="textBoxSending" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="4" Grid.Row="10" FontSize="24" />
+        <TextBox x:Name="textBoxToRro" Text="" Grid.Column="4" Grid.Row="9" FontSize="24" Foreground="#FF073CBD" Background="#FFECEBCC" />
+        <TextBox x:Name="textBoxOwnerRro" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="4" Grid.Row="12" FontSize="24" />
+        <TextBox x:Name="textBoxRegister" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="6" FontSize="24" />
+        <TextBox x:Name="textBoxFinish" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="4" Grid.Row="11" FontSize="24" />
+        <TextBox x:Name="textBoxAddress" Text="" Background="#FFDAF0F7" Foreground="#FF073CBD" Grid.Column="2" Grid.Row="17" Grid.ColumnSpan="6" FontSize="24" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+        <TextBox x:Name="textBoxFind" Text="" Grid.Column="2" Grid.Row="3" FontSize="24" Background="#FF0DEFA2" />
+        <Label x:Name="labeFind" Content="Поиск ->" Grid.Column="1" Grid.Row="3" FontSize="24" Background="#FF41F465" HorizontalAlignment="Left" Height="40" Margin="39,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="labeInfo" Content="" Foreground="#FF1435EC" Grid.Column="1" Grid.Row="18" Grid.ColumnSpan="5" FontSize="24" Background="#FF41F465" HorizontalAlignment="Left" Height="40" Margin="39,0,0,0" VerticalAlignment="Center"/>
+
+        <Label x:Name="labeKoatuHead" Content="koatu" Grid.Column="1" Grid.Row="15"  FontSize="24" Foreground="#FF1435EC" Background="#FF41F465" HorizontalAlignment="Left" Height="40" Margin="39,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="labeKoatu" Content="koatu" Grid.Column="2" Grid.Row="15" FontSize="24" Foreground="#FF1435EC" Background="#FFA2F9F7" HorizontalAlignment="Left" Height="40" Margin="39,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="labeTaxIdHead" Content="taxId" Grid.Column="3" Grid.Row="16"  FontSize="24" Foreground="#FF1435EC" Background="#FF41F465" HorizontalAlignment="Left" Height="40" Margin="39,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="labeTaxId" Content="taxId" Grid.Column="4" Grid.Row="16" Grid.ColumnSpan="2" FontSize="24" Foreground="#FF1435EC" Background="#FFA2F9F7" HorizontalAlignment="Left" Height="40" Margin="39,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="labeKoatu2Head" Content="Koatu2" Grid.Column="1" Grid.Row="16"  FontSize="24" Foreground="#FF1435EC" Background="#FF41F465" HorizontalAlignment="Left" Height="40" Margin="39,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="labeKoatu2" Content="Koatu2" Grid.Column="2" Grid.Row="16" Grid.ColumnSpan="2" FontSize="24" Foreground="#FF1435EC" Background="#FFA2F9F7" HorizontalAlignment="Left" Height="40" Margin="39,0,0,0" VerticalAlignment="Center"/>
+
+
+        <Button x:Name="ButtonVybor" Content="_Find" Grid.Column="3" Grid.Row="3" Click="ButtonFindAny_Click" Background="#FF41F465" Height="43" FontSize="24" Margin="0,0,0,37" Grid.RowSpan="2" />
+        <Button x:Name="ButtonClear" Content="_Clear" Grid.Column="4" Grid.Row="3" Background="#FFCEF9D7" Click="WinTermClear_Click" Height="43" FontSize="24" Margin="0,0,0,37" Grid.RowSpan="2" />
+        <Button x:Name="ButtonBack" Content="_Pred" Grid.Column="1" Grid.Row="2" Background="#FF0DD7E8" Click="WinTermBack_Click" Height="43" FontSize="24" Margin="0,0,0,37" Grid.RowSpan="2" />
+        <Button x:Name="ButtonForward" Content="_Next" Grid.Column="2" Grid.Row="2" Background="#FF0DD7E8" Click="WinTermForward_Click" Height="43" FontSize="24" Margin="0,0,0,37" Grid.RowSpan="2" />
+        <Button x:Name="ButtonUpdate" Content="_Refresh" Grid.Column="2" Grid.Row="1" Background="#FF0DD7E8" Click="WinTermUpdate_Click" Height="43" FontSize="24" Margin="0,0,0,37" Grid.RowSpan="2" />
+        <Button x:Name="ButtonDel" Content="_Del" Grid.Column="4" Grid.Row="1" Background="#FFF3C4E2" Click="WinTermDel_Click" Height="43" FontSize="24" Margin="0,0,0,37" Grid.RowSpan="2" />
+        <Button x:Name="ButtonAdd" Content="_Add" Grid.Column="1" Grid.Row="1" Background="#FF0DD7E8" Click="WinTermAdd_Click" Height="43" FontSize="24" Margin="0,0,0,37" Grid.RowSpan="2" VerticalAlignment="Bottom" />
+        <Button x:Name="ButtonShow" Content="_Show" Grid.Column="6" Grid.Row="0" Background="#FF0DD7E8" Click="WinTermShowList_Click" Height="43" FontSize="24" Margin="0,0,0,37" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
+
+        <Label x:Name="labelcmbModel" Content="Model" Grid.Column="4" Grid.Row="13" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <ComboBox Name="cmbModel" Grid.Column="3" Grid.Row="13" Foreground="#FF1435EC" Background="#FF0DD7E8" SelectionChanged="ComboBoxModel_SelectionChanged" FontSize="24" >
+        </ComboBox>
+        <Label x:Name="labelcmbOwner" Content="Owner" Grid.Column="4" Grid.Row="14" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <ComboBox Name="cmbOwner" Grid.Column="3" Grid.Row="14" Foreground="#FF1435EC" Background="#FF0DD7E8" SelectionChanged="ComboBoxOwner_SelectionChanged" FontSize="24" >
+        </ComboBox>
+        <Label x:Name="labelcmbSoft" Content="Soft" Grid.Column="4" Grid.Row="15" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <ComboBox Name="cmbSoft" Grid.Column="3" Grid.Row="15" Foreground="#FF1435EC" Background="#FF0DD7E8" SelectionChanged="ComboBoxSoft_SelectionChanged" FontSize="24" >
+        </ComboBox>
+        <Label x:Name="labelcmbSeal" Content="Sealing" Grid.Column="4" Grid.Row="15" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0"/>
+        <ComboBox Name="cmbSeal" Grid.Column="3" Grid.Row="15" Foreground="#FF1435EC" Background="#FF0DD7E8" SelectionChanged="ComboBoxSeal_SelectionChanged" FontSize="24" >
+        </ComboBox>
+
+        <ListBox x:Name="listBoxTerm" Grid.Column="6" Grid.Row="1" Grid.RowSpan="16" FontSize="24" Foreground="#FF1435EC" Background="#FF92E7F0" Height="660" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
